@@ -2,8 +2,8 @@
 // Hold message model built with Mongo
 var mongoose = require('mongoose');
 // Schema helps creating blueprint of models
-var schema = mongoose.Schema;
-var mongoose-unique-validator = require('mongoose-unique-validator');
+var Schema = mongoose.Schema;
+var validator = require('mongoose-unique-validator');
 // Defines what message model should look like
 // ** User need to have Message reference
 // ** Message need User reference
@@ -18,7 +18,7 @@ var schema = new Schema({
   messages: [{type: Schema.Types.ObjectId, ref: 'Message'}]
 });
 
-schema.plugin(mongoose-unique-validator);
+schema.plugin(validator);
 
 // Set up model
 // model('Name of Model') -- collection will be named messages
